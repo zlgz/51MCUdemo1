@@ -1,0 +1,149 @@
+C51 COMPILER V9.57.0.0   MAIN                                                              12/29/2019 11:19:32 PAGE 1   
+
+
+C51 COMPILER V9.57.0.0, COMPILATION OF MODULE MAIN
+OBJECT MODULE PLACED IN main.OBJ
+COMPILER INVOKED BY: D:\Program Files\Keil\C51\BIN\C51.EXE main.c OPTIMIZE(8,SPEED) BROWSE DEBUG OBJECTEXTEND
+
+line level    source
+
+   1          #include <reg52.h>
+   2          
+   3          //延时函数
+   4          void delay(unsigned int);
+   5          //主函数
+   6          void main(void)
+   7          {
+   8   1               unsigned char led,i;
+   9   1               while(1)
+  10   1               {
+  11   2                        led=0xfe;
+  12   2                        for(i=0;i<8;i++) 
+  13   2                        {
+  14   3                                 P2=led;
+  15   3                                 delay(500);
+  16   3                                 led=(led<<1)+1;                                                  
+  17   3                        }
+  18   2                        for(i=0;i<9;i++) 
+  19   2                        {
+  20   3                                 P2=led;
+  21   3                                 delay(500);
+  22   3                                 led=led<<1;  
+  23   3                        }
+  24   2                        led=0xff;
+  25   2                        for(i=8;i>0;i--)
+  26   2                        {
+  27   3                                P2=led;
+  28   3                                delay(500);
+  29   3                                led=led>>1;
+  30   3                        }
+  31   2                        for(i=0;i<5;i++)
+  32   2                        {
+  33   3                                P2=led;
+  34   3                                delay(500);
+  35   3                                led=(led<<2)+1;
+  36   3                        }
+  37   2                        for(i=0;i<5;i++)
+  38   2                        {
+  39   3                                P2=led;
+  40   3                                delay(500);
+  41   3                                led=(led>>2);
+  42   3                        }
+  43   2                        for(i=0;i<9;i++)
+  44   2                        {
+  45   3                                P2=led;
+  46   3                                delay(500);
+  47   3                              led=(led>>1)+128;
+  48   3                        }
+  49   2      //                {
+  50   2      //                        led=0xe7;
+  51   2      //                        P2=led;
+  52   2      //                        delay(500);
+  53   2      //                        led=0xc3;
+  54   2      //                        P2=led;
+  55   2      //                        delay(500);
+C51 COMPILER V9.57.0.0   MAIN                                                              12/29/2019 11:19:32 PAGE 2   
+
+  56   2      //                        led=0x81;
+  57   2      //                        P2=led;
+  58   2      //                        delay(500);
+  59   2      //                        led=0x00;
+  60   2      //                        P2=led;
+  61   2      //                        delay(500);
+  62   2      //                }
+  63   2      //                {
+  64   2      //                        led=0x7e;
+  65   2      //                        P2=led;
+  66   2      //                        delay(500);
+  67   2      //                        led=0x3c;
+  68   2      //                        P2=led;
+  69   2      //                        delay(500);
+  70   2      //                        led=0x18;
+  71   2      //                        P2=led;
+  72   2      //                        delay(500);
+  73   2      //                        led=0x00;
+  74   2      //                        P2=led;
+  75   2      //                        delay(500);
+  76   2      //                }
+  77   2      //                {
+  78   2      //                        led=0xe7;
+  79   2      //                        P2=led;
+  80   2      //                        delay(500);
+  81   2      //                        led=0xdb;
+  82   2      //                        P2=led;
+  83   2      //                        delay(500);
+  84   2      //                        led=0xbd;
+  85   2      //                        P2=led;
+  86   2      //                        delay(500);
+  87   2      //                        led=0x7e;
+  88   2      //                        P2=led;
+  89   2      //                        delay(500);
+  90   2      //                }
+  91   2      //                {
+  92   2      //                        led=0xbd;
+  93   2      //                        P2=led;
+  94   2      //                        delay(500);
+  95   2      //                        led=0xdb;
+  96   2      //                        P2=led;
+  97   2      //                        delay(500);
+  98   2      //                        led=0xe7;
+  99   2      //                        P2=led;
+ 100   2      //                        delay(500);
+ 101   2      //                }
+ 102   2                        led=0xff;
+ 103   2                        P2=led;
+ 104   2                        delay(500);
+ 105   2               }
+ 106   1      
+ 107   1      }
+ 108          void delay(unsigned int n)
+ 109          {
+ 110   1       unsigned int x,y;
+ 111   1       for(x=0;x<n;x++)
+ 112   1       {
+ 113   2        for(y=0;y<121;y++)
+ 114   2        {
+ 115   3              ;
+ 116   3        }
+ 117   2       }
+C51 COMPILER V9.57.0.0   MAIN                                                              12/29/2019 11:19:32 PAGE 3   
+
+ 118   1      }
+ 119          
+ 120          
+ 121          
+ 122          
+
+
+MODULE INFORMATION:   STATIC OVERLAYABLE
+   CODE SIZE        =    188    ----
+   CONSTANT SIZE    =   ----    ----
+   XDATA SIZE       =   ----    ----
+   PDATA SIZE       =   ----    ----
+   DATA SIZE        =   ----       2
+   IDATA SIZE       =   ----    ----
+   BIT SIZE         =   ----    ----
+END OF MODULE INFORMATION.
+
+
+C51 COMPILATION COMPLETE.  0 WARNING(S),  0 ERROR(S)
